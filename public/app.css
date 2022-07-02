@@ -1,0 +1,25 @@
+body {
+    background-color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h3 {
+    margin-top: 2px;
+    color: aqua;
+}
+
+.boxed {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 1px;
+    border-color: black;
+    text-align: center;
+}
+
+button {
+    margin: 2px;
+}
+
+#back {
+    padding-top: 4px;
+}
