@@ -18,7 +18,7 @@
 
         <p>After this point, everything will be worked on using the Laravel PHP framework.</p>
 
-        <a href="demo/testingStuff">aaaaaaaaaaaaaa</a>
+        <a href="demo/testingStuff">Simple page to test if the website is dynamic</a>
     </div>
 
 </body>
