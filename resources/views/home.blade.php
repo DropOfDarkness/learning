@@ -1,5 +1,5 @@
 <head>
-    <title>Links to tests</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/app.css" />
 </head>
 
