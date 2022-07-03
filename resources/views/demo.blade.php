@@ -6,7 +6,7 @@
 <body>
 
     <div class="boxed">
-        <?= $insert ?>
+        <?= $insert ?> <!-- fills the division with whatever is passed through from the route in web.php -->
     </div>
     
     <a id="back" href="/">Back</a>

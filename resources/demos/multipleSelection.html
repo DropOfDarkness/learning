@@ -2,14 +2,18 @@
     <label for="random">Choose wisely: </label>
     <div id="buttons">
         <select name="random" id="selectionMenu">
+            <!--creates a list with the options below-->
             <option value="walk">Walk</option>
             <option value="run">Run</option>
             <option value="jump">Jump</option>
             <option value="chacha">Real Smooth</option>
         </select><br />
+        <!--creates button that funs the switch statement in multipleSelections.js and hides button elements-->
         <button id="result" onclick="manySelect()">Decide</button>
     </div>
+    <!--paragraph to hold output of selected switch-->
     <p id="resultParagraph"></p>
+    <!--button to unhide button elements-->
     <button onclick="reset()">Reset</button>
 </div>
 <script src="/js/multipleSelection.js"></script>
