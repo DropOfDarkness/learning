@@ -40,7 +40,8 @@ Route::get('/demo/{path}', function($demoName){ //on request for "URL/demo/####"
 
 Route::get('/submission', function(Request $request){ 
     $message = $request->messageEntry;
-    if($message != null){
+    $pass = $request->password;
+    if($message != null && $pass == getenv("MESSAGE_PASSWORD")){
         Storage::disk('public')->put('message.txt', $message);
     };
     return redirect('/demo/messageBoard');
