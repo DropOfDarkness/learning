@@ -30,15 +30,19 @@ Route::get('/demo/messageBoard', function(){
 
 Route::get('/demo/{path}', function($demoName){ //on request for "URL/demo/####", start function and pass "####" through as "$demoName"
     $selectDemo = resource_path("demos/$demoName.html"); //create variable "$selectDemo" and set it to "resources/demos/'####'.html"
-    $demoContent = file_get_contents($selectDemo); //create variable "$demoContent" and gets the content of the file "resources/demos/'####'.html"
-    return view("demo", [ //return the demo view to the browser and passes the "$demoContent" variable through as "insert"
-        'insert' => $demoContent
-    ]);
+    if (file_exists($selectDemo)){ //checks if "$selectDemo" exists
+        $demoContent = file_get_contents($selectDemo); //create variable "$demoContent" and gets the content of the file "resources/demos/'####'.html"
+        return view("demo", [ //return the demo view to the browser and passes the "$demoContent" variable through as "insert"
+            'insert' => $demoContent
+        ]);
+    } else {
+        abort(404);
+    };
 });
 
 
 
-Route::get('/submission', function(Request $request){ 
+Route::get('/submission', function(Request $request){
     $message = $request->messageEntry;
     $pass = $request->password;
     if($message != null && $pass == getenv("MESSAGE_PASSWORD")){
