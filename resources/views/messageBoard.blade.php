@@ -1,14 +1,10 @@
-<head>
-    <title>learning</title>
-    <link rel="stylesheet" href="/app.css" />
-</head>
+@extends('layout')
 
-<body>
+@section('demoContent')
 
-    <div class="boxed">
         <h2>Previous Message:</h2>
         <p id="messageArea">
-            <?= $message ?>
+            {{ $message }}
         </p><br />
 
         <form action="/submission" id="frum">
@@ -21,7 +17,5 @@
 
             <input type="submit" value="Submit">
         </form>
-    </div>
 
-    <a id="back" href="/">Back</a>
-</body>
+@endsection
