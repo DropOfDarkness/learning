@@ -2,7 +2,7 @@
 Processes data in textarea id="postCodeEntry" and verifies if it follows a certain tformat
 */
 
-const verifyPostCode = /^[A-Za-z]{2}[0-9]{2} [A-Za-z0-9]{3}/; //sets constant "verifyPostCode" to regular expression 
+const verifyPostCode = /^[A-Za-z]{2}[0-9]{2} [A-Za-z0-9]{3}/; //sets constant "verifyPostCode" to regular expression
 /* Regular Expression:
 [A-Za-z]{2}- first 2 characters can be A to Z, either upper or lower case
 [0-9]{2} - next 2 characters can be 0 to 9, and must have a space right after
@@ -14,8 +14,8 @@ function postCodeChecker() {
     const check = verifyPostCode.exec(postCode.value); //create constant "check" and sets it to run the value of "postCode" against the regular expression check "verifyPostCode"
 
     if (!check) { //checks the result of "check" and performs corresponding output
-        document.getElementById("postCodeResult").innerHTML = ("That isn't a post code, you twat.");
+        document.getElementById("postCodeResult").innerHTML = ("That isn't a post code.");
     } else {
-        document.getElementById("postCodeResult").innerHTML = ("You live in a twatty area.");
+        document.getElementById("postCodeResult").innerHTML = ("You live in a nice area.");
     }
 }

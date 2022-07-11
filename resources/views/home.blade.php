@@ -11,7 +11,7 @@
             Each link below displays a different function, in the order I have learned.<br />
         </p>
         <!-- each line links to their representive pages -->
-        <a href="demo/twatButton">Basic Button Example</a><br />
+        <a href="demo/hatButton">Basic Button Example</a><br />
         <a href="demo/nameProcess">Text Field Example</a><br />
         <a href="demo/postCode">Text Pattern Validation via a Regular Expression</a><br />
         <a href="demo/multipleSelection">Multiple Selections leading to a specific output</a><br />
