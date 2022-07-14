@@ -19,7 +19,7 @@
         <p>After this point, everything will be worked on using the Laravel PHP framework.</p>
 
         <a href="demo/testingStuff">Simple page to test if the website is dynamic</a><br />
-        <a href="demo/messageBoard">Message Board</a>
+        <a href="demo/messageBoard">Message Board</a><br />
         <a href="demo/game">5 Second Click Game</a>
     </div>
 
