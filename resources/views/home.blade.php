@@ -20,6 +20,7 @@
 
         <a href="demo/testingStuff">Simple page to test if the website is dynamic</a><br />
         <a href="demo/messageBoard">Message Board</a>
+        <a href="demo/game">5 Second Click Game</a>
     </div>
 
 </body>

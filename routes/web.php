@@ -28,6 +28,10 @@ Route::get('/demo/messageBoard', function(){
     ]);
 });
 
+Route::get('/demo/game', function(){
+    return view("game");
+});
+
 Route::get('/demo/{path}', function($demoName){ //on request for "URL/demo/####", start function and pass "####" through as "$demoName"
     $selectDemo = resource_path("demos/$demoName.html"); //create variable "$selectDemo" and set it to "resources/demos/'####'.html"
     if (file_exists($selectDemo)){ //checks if "$selectDemo" exists
