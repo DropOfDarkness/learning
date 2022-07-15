@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->integer('score');
-            $table->timestamp('score_set');
             $table->timestamps();
         });
     }

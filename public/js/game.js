@@ -41,9 +41,15 @@ function finished(){
     document.getElementById('score').innerHTML = clickCount;
     document.getElementById('currentTime').innerHTML = endTime;
     document.getElementById('endScreen').style.display = "block";
-};
 
-function reset(){
-    document.getElementById('endScreen').style.display = "none";
-    document.getElementById('game').style.display = "block";
-}
+    sendoff = {};
+    sendoff.name = username;
+    sendoff.score = clickCount;
+    //a token is stored in a meta tag which we use to validate the request
+    sendoff._token = document.querySelector("meta[name=csrf-token]").getAttribute("content");
+
+    var scoreSubmit = new XMLHttpRequest();
+    scoreSubmit.open("POST", "/submitScore", true);
+    scoreSubmit.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    scoreSubmit.send(JSON.stringify(sendoff));
+};

@@ -2,6 +2,8 @@
 
 @section('demoContent')
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <h2>Clicker Game</h2>
     Click the box as many times as you can in 5 seconds!<br/><br/>
     <div id='game'>
@@ -17,7 +19,7 @@
         <h3>Score: </h3><p id='score'></p><br/>
         <h3>Time Set: </h3><p id='currentTime'></p><br/>
         <br/>
-        <button onclick=reset()>Retry!</button>
+        <button onclick=location.reload()>Retry!</button>
     </div>
 
     <script src='/js/game.js'></script>

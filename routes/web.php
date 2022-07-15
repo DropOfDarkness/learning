@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\GameScore;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +45,6 @@ Route::get('/demo/{path}', function($demoName){ //on request for "URL/demo/####"
     };
 });
 
-
-
 Route::get('/submission', function(Request $request){
     $message = $request->messageEntry;
     $pass = $request->password;
@@ -53,4 +52,13 @@ Route::get('/submission', function(Request $request){
         Storage::disk('public')->put('message.txt', $message);
     };
     return redirect('/demo/messageBoard');
+});
+
+Route::post('/submitScore', function(Request $request){
+    $data = $request->json()->all();
+
+    $gamescore = new GameScore();
+    $gamescore->username = $data['name'];
+    $gamescore->score = $data['score'];
+    $gamescore->save();
 });
