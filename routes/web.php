@@ -31,7 +31,10 @@ Route::get('/demo/messageBoard', function(){
 });
 
 Route::get('/demo/game', function(){
-    return view("game");
+    $top5 = DB::select('SELECT username , score FROM game_scores ORDER BY score DESC LIMIT 5;');
+    return view("game", [
+        'topScores' => $top5
+    ]);
 });
 
 Route::get('/demo/{path}', function($demoName){ //on request for "URL/demo/####", start function and pass "####" through as "$demoName"
@@ -62,11 +65,4 @@ Route::post('/submitScore', function(Request $request){
     $gamescore->username = $data['name'];
     $gamescore->score = $data['score'];
     $gamescore->save();
-});
-
-Route::get('/clickLeaderboard', function(Request $request){
-    $top5 = DB::select('SELECT username , score FROM game_scores ORDER BY score DESC LIMIT 5;');
-    return view('clickLeaderboard', [
-        'topScores' => $top5
-    ]);
 });

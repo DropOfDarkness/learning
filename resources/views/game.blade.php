@@ -21,6 +21,20 @@
         <br/>
         <button onclick=location.reload()>Retry!</button>
     </div>
+    <br/><br/>
+    
+    <div id='leaderboard'>
+        <h3>Top 5 Scores:</h3>
+        
+        <?php foreach ($topScores as $score) : ?>
+
+            <?= $score->username; ?> | <?= $score->score; ?><br/>
+
+        <?php endforeach ?>
+
+    </div>
+
+    <br/>
 
     <script src='/js/game.js'></script>
 

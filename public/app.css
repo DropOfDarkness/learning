@@ -23,3 +23,11 @@ button {
 #back {
     padding-top: 4px;
 }
+
+@media (min-width: 1000px) {
+    #leaderboard {
+        position: absolute;
+        top: 5em;
+        left: 2em;
+    }
+}
