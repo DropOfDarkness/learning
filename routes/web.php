@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use App\Models\GameScore;
 
 /*
@@ -61,4 +62,11 @@ Route::post('/submitScore', function(Request $request){
     $gamescore->username = $data['name'];
     $gamescore->score = $data['score'];
     $gamescore->save();
+});
+
+Route::get('/clickLeaderboard', function(Request $request){
+    $top5 = DB::select('SELECT username , score FROM game_scores ORDER BY score DESC LIMIT 5;');
+    return view('clickLeaderboard', [
+        'topScores' => $top5
+    ]);
 });
